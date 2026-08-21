@@ -1,10 +1,6 @@
-# Twin News v0.3
+# Twin News
 
-A local-first Chrome extension that builds a personalized morning intelligence dashboard for AI, science, neuroscience, startups, hardware, computer science, math and venture capital.
-
-## What changed in v0.3
-
-Twin no longer requires Python, localhost, a backend, an account, or an API key. It runs as a Manifest V3 Chrome extension and stores its working state in `chrome.storage.local`.
+A local-first Chrome extension that builds a personalized morning intelligence dashboard for AI, science, neuroscience, startups, hardware, computer science, math and venture capital. Twin runs as a Manifest V3 Chrome extension and stores its working state in `chrome.storage.local`.
 
 ### Features
 
