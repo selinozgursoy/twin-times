@@ -2,10 +2,6 @@
 
 A local-first personal news intelligence dashboard. TwinTimes ingests RSS/Atom and arXiv feeds, normalizes them into SQLite, scores each story against a transparent personal profile, deduplicates near-identical headlines, and builds a calm daily briefing.
 
-## Why this exists
-
-Most news apps optimize for engagement. Twin optimizes for *relevance to one person* while preserving a discovery budget so the feed does not collapse into a filter bubble.
-
 ## Features
 
 - Zero third-party Python dependencies (Python 3.11+ recommended)
@@ -41,7 +37,7 @@ Click **Refresh** once. The app also refreshes automatically every 30 minutes wh
 
 ## Chrome extension
 
-TwinTimes now includes a Manifest V3 extension in `extension/`. The extension is
+TwinTimes includes a Manifest V3 extension in `extension/`. The extension is
 the browser interface; the local Python service continues to handle RSS,
 ranking, SQLite, and email so personal data and SMTP credentials stay outside
 Chrome.
@@ -149,19 +145,3 @@ RSS / Atom / arXiv
 5. Paper citation graph
 6. Daily snapshot/history
 7. Optional native host/desktop launcher so the service can start with Chrome
-
-## Push an update
-
-```bash
-python scripts/build_extension.py
-python -m unittest -v
-git status
-git add -A
-git commit -m "Add TwinTimes Chrome extension"
-git push origin main
-```
-
-Do not commit `.env` or `data/twin.db`; both are ignored because they can contain
-credentials and personal reading history.
-
-MIT licensed.
