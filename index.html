@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f35">
+  <title>TwinTimes — Your daily signal</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-page="briefing">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">T</span><span>TwinTimes</span></a>
+    <nav class="main-nav" aria-label="Primary navigation"><a class="active" href="#today">Today</a><a href="#sections">Sections</a><a href="#deep">Deep reads</a></nav>
+    <div class="top-actions"><span id="status" class="status"><i></i> Live</span><a class="icon-link" href="newsmarks.html" aria-label="Open Newsmarks">☆ <b id="markCount">0</b></a><button id="refresh" class="button primary">Refresh</button></div>
+  </header>
+  <main>
+    <section id="today" class="hero">
+      <div class="hero-copy"><p class="eyebrow"><span id="date"></span> · <span id="ptTime"></span> PT</p><h1>Good morning,<br><em>Selin.</em></h1><p class="lede">A calm, high-signal scan of the ideas and shifts worth your attention today.</p><div class="hero-meta"><span><b id="storyCount">0</b> selected stories</span><span>~<b id="readTime">0</b> min read</span><span id="updated">Awaiting refresh</span></div></div>
+      <aside class="signal-card" aria-label="Briefing signal"><span class="signal-label">TODAY'S SIGNAL</span><div class="signal-rings"><div><strong id="signalScore">—</strong><small>relevance</small></div></div><p id="signalTopics">Your strongest themes will appear here.</p></aside>
+    </section>
+    <section class="dashboard" aria-labelledby="top-title">
+      <div class="section-heading"><div><span class="index">01</span><p class="eyebrow">The essential scan</p><h2 id="top-title">Top news of the day</h2></div><span class="hint">Open a story for context and actions</span></div>
+      <div id="topGrid" class="top-grid"><div class="loading">Building today’s briefing…</div></div>
+    </section>
+    <section id="sections" class="dashboard">
+      <div class="section-heading"><div><span class="index">02</span><p class="eyebrow">Browse your interests</p><h2>Sections</h2></div><div id="sectionTabs" class="tabs" role="tablist"></div></div>
+      <div id="sectionPanel" class="section-panel"></div>
+    </section>
+    <section id="deep" class="dashboard deep-dashboard">
+      <div class="section-heading"><div><span class="index">03</span><p class="eyebrow">Primary sources</p><h2>Deeper read</h2></div><span class="hint">Nature, arXiv & research releases</span></div>
+      <div id="deepGrid" class="deep-grid"></div>
+    </section>
+    <section class="diet-card">
+      <div><p class="eyebrow">Your information diet</p><h2>Attention, made visible.</h2><p>Interactions are tracked only on this device, helping your twin learn without turning your attention into a product.</p></div>
+      <div class="diet-total"><strong id="dietTotal">0</strong><span>interactions today</span></div><div><h3>Topics</h3><div id="topicBars" class="bars"></div></div><div><h3>Sources</h3><div id="sourceBars" class="bars"></div></div>
+    </section>
+    <section class="podcasts">
+      <div class="section-heading"><div><span class="index">04</span><p class="eyebrow">Listen next</p><h2>For the walk home</h2></div><span class="hint">Podcast recommendations for your current interests</span></div>
+      <div id="podcastGrid" class="podcast-grid"></div>
+    </section>
+  </main>
+  <footer><a class="brand" href="index.html"><span class="brand-mark">T</span><span>TwinTimes</span></a><p>Local-first personal intelligence. Your reading data stays yours.</p><a href="newsmarks.html">Newsmarks →</a></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
+</body></html>

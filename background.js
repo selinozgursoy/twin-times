@@ -1,8 +1,3 @@
-import {ensureDefaults,getState,patchState,toggleNewsmark,engage} from './lib/store.js';
-import {fetchSource} from './lib/feeds.js';
-async function refresh(){await ensureDefaults();const state=await getState();const batches=await Promise.allSettled(state.sources.filter(x=>x.enabled).map(fetchSource));const incoming=batches.flatMap(x=>x.status==='fulfilled'?x.value:[]);const map=new Map([...incoming,...state.stories].map(x=>[x.id,x]));const stories=[...map.values()].sort((a,b)=>new Date(b.publishedAt)-new Date(a.publishedAt)).slice(0,700);const errors=batches.filter(x=>x.status==='rejected').map(x=>String(x.reason));const lastRefresh=new Date().toISOString();await patchState({stories,lastRefresh,lastErrors:errors});return {fetched:incoming.length,total:stories.length,errors};}
-chrome.runtime.onInstalled.addListener(async()=>{await ensureDefaults();chrome.contextMenus.create({id:'newsmark-page',title:'★ Newsmark this page',contexts:['page','link']});chrome.alarms.create('twin-refresh',{periodInMinutes:240});refresh().catch(()=>{});});
-chrome.runtime.onStartup.addListener(()=>refresh().catch(()=>{}));
-chrome.alarms.onAlarm.addListener(a=>{if(a.name==='twin-refresh')refresh().catch(()=>{})});
-chrome.contextMenus.onClicked.addListener(async(info,tab)=>{if(info.menuItemId!=='newsmark-page')return;const url=info.linkUrl||info.pageUrl||tab?.url;const title=info.linkUrl?info.selectionText||url:tab?.title||url;if(!url)return;await toggleNewsmark({id:`manual-${btoa(unescape(encodeURIComponent(url))).slice(0,24)}`,title,url,source:new URL(url).hostname.replace(/^www\./,''),summary:'Saved directly from Chrome.',topics:[],score:0,type:'manual',publishedAt:new Date().toISOString()});});
-chrome.runtime.onMessage.addListener((msg,_sender,send)=>{(async()=>{if(msg.type==='refresh')send(await refresh());else if(msg.type==='state')send(await getState());else if(msg.type==='toggleNewsmark')send(await toggleNewsmark(msg.story));else if(msg.type==='engage'){await engage(msg.storyId,msg.action,msg.extra||{});send({ok:true});}else if(msg.type==='openDashboard'){await chrome.tabs.create({url:chrome.runtime.getURL('dashboard.html')});send({ok:true});}})().catch(e=>send({error:String(e)}));return true;});
+chrome.action.onClicked.addListener(() => {
+  chrome.tabs.create({url: chrome.runtime.getURL('index.html')});
+});

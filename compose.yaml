@@ -1,0 +1,17 @@
+services:
+  twin:
+    build: .
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./data:/app/data
+      - ./profile.json:/app/profile.json
+      - ./sources.json:/app/sources.json
+    environment:
+      - TWIN_REFRESH_MINUTES=${TWIN_REFRESH_MINUTES:-30}
+      - TWIN_SMTP_HOST=${TWIN_SMTP_HOST:-}
+      - TWIN_SMTP_PORT=${TWIN_SMTP_PORT:-587}
+      - TWIN_SMTP_USER=${TWIN_SMTP_USER:-}
+      - TWIN_SMTP_PASSWORD=${TWIN_SMTP_PASSWORD:-}
+      - TWIN_SMTP_FROM=${TWIN_SMTP_FROM:-}
+    restart: unless-stopped

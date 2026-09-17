@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#173f35"><title>Newsmarks — TwinTimes</title><link rel="stylesheet" href="app.css"></head>
+<body data-page="newsmarks">
+  <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">T</span><span>TwinTimes</span></a><nav class="main-nav"><a href="index.html">Briefing</a><a class="active" href="newsmarks.html">Newsmarks</a></nav><div class="top-actions"><a class="button secondary" href="index.html">← Back to today</a></div></header>
+  <main><section class="marks-hero"><div><p class="eyebrow">Your reading queue</p><h1>Newsmarks<span>.</span></h1><p class="lede">Stories you chose to keep, collected away from the daily scan.</p></div><div class="mark-stat"><strong id="markCount">0</strong><span>saved stories</span></div></section>
+    <section class="marks-toolbar"><div class="filter-group"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="today">Today</button></div><button id="openEmail" class="button primary">Email today’s Newsmarks</button></section>
+    <section id="marksList" class="marks-list"><div class="loading">Loading Newsmarks…</div></section></main>
+  <dialog id="emailDialog" class="email-dialog"><form id="emailForm"><button type="button" class="dialog-close" id="closeEmail" aria-label="Close">×</button><p class="eyebrow">Daily dispatch</p><h2>Email today’s Newsmarks</h2><p>TwinTimes sends through the SMTP account configured on your computer. Your credentials never enter the browser.</p><label>Email address<input id="emailTo" type="email" required placeholder="you@example.com" autocomplete="email"></label><div id="emailNotice" class="email-notice"></div><div class="dialog-actions"><button type="button" id="previewEmail" class="button secondary">Preview</button><button type="submit" class="button primary">Send digest</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div><footer><a class="brand" href="index.html"><span class="brand-mark">T</span><span>TwinTimes</span></a><p>Local-first personal intelligence.</p><a href="index.html">Today’s briefing →</a></footer><script src="app.js"></script>
+</body></html>

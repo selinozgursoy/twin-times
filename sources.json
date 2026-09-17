@@ -1,0 +1,19 @@
+[
+  {"name":"The New York Times","type":"rss","url":"https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml","enabled":true},
+  {"name":"Bloomberg","type":"rss","url":"https://feeds.bloomberg.com/technology/news.rss","enabled":true},
+  {"name":"Financial Times","type":"rss","url":"https://www.ft.com/technology?format=rss","enabled":true},
+  {"name":"TechCrunch","type":"rss","url":"https://techcrunch.com/feed/","enabled":true},
+  {"name":"Nature","type":"rss","url":"https://www.nature.com/nature.rss","enabled":true},
+  {"name":"Washington Post · via Google News","type":"rss","url":"https://news.google.com/rss/search?q=site%3Awashingtonpost.com+technology+OR+science+OR+AI&hl=en-US&gl=US&ceid=US%3Aen","enabled":true},
+  {"name":"Forbes · via Google News","type":"rss","url":"https://news.google.com/rss/search?q=site%3Aforbes.com+technology+OR+AI+OR+venture+capital&hl=en-US&gl=US&ceid=US%3Aen","enabled":true},
+  {"name":"Yahoo News · via Google News","type":"rss","url":"https://news.google.com/rss/search?q=site%3Anews.yahoo.com+technology+OR+science+OR+AI&hl=en-US&gl=US&ceid=US%3Aen","enabled":true},
+  {"name":"Google News · AI","type":"rss","url":"https://news.google.com/rss/search?q=artificial+intelligence+OR+OpenAI+OR+Anthropic+OR+DeepMind&hl=en-US&gl=US&ceid=US%3Aen","enabled":true},
+  {"name":"Google News · Hardware & Robotics","type":"rss","url":"https://news.google.com/rss/search?q=robotics+OR+semiconductor+OR+NVIDIA+OR+TSMC+OR+AI+chips&hl=en-US&gl=US&ceid=US%3Aen","enabled":true},
+  {"name":"Google News · VC","type":"rss","url":"https://news.google.com/rss/search?q=venture+capital+OR+startup+funding+technology&hl=en-US&gl=US&ceid=US%3Aen","enabled":true},
+  {"name":"Google News · Neuroscience","type":"rss","url":"https://news.google.com/rss/search?q=neuroscience+OR+brain-computer+OR+neurotechnology&hl=en-US&gl=US&ceid=US%3Aen","enabled":true},
+  {"name":"Google News · Life Sciences","type":"rss","url":"https://news.google.com/rss/search?q=biotechnology+OR+life+sciences+OR+drug+discovery&hl=en-US&gl=US&ceid=US%3Aen","enabled":true},
+  {"name":"arXiv AI","type":"arxiv","query":"cat:cs.AI","max_results":35,"enabled":true},
+  {"name":"arXiv ML","type":"arxiv","query":"cat:cs.LG","max_results":35,"enabled":true},
+  {"name":"arXiv Robotics","type":"arxiv","query":"cat:cs.RO","max_results":25,"enabled":true},
+  {"name":"arXiv Neuroscience","type":"arxiv","query":"cat:q-bio.NC","max_results":25,"enabled":true}
+]
